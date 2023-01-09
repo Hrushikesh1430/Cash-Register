@@ -245,7 +245,11 @@
       if (bill.value === "" || cash.value === "") {
         output.innerHTML = "Please fill all the fields.";
         output.style.display = "block";
-
+        return;
+      }
+      if (bill.value === cash.value) {
+        output.innerHTML = "Bill amount cannot be equal to the cash given";
+        output.style.display = "block";
         return;
       }
       var bill_amount = parseInt(bill.value);
